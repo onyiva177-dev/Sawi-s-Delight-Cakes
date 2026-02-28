@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
     <title>Sawi's Delight Cakes - Freshly Baked Celebration Cakes | Siaya County</title>
     <meta name="description" content="Premium celebration cakes for birthdays, weddings, graduations in Siaya County. Custom designs, fresh ingredients, home-baked with love.">
     
@@ -914,17 +916,28 @@
         <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">© 2025 Sawi's Delight Cakes. All rights reserved.</p>
     </footer>
     
-    <script>
-    // Automatic cache-busting - no manual updates needed!
+   <script>
+    // Nuclear option - force reload every time
     const timestamp = new Date().getTime();
+    const randomNum = Math.random().toString(36).substring(7);
     
+    // Clear any cached versions
+    if ('caches' in window) {
+        caches.keys().then(function(names) {
+            for (let name of names) caches.delete(name);
+        });
+    }
+    
+    // Force reload scripts with double cache busting
     const dataScript = document.createElement('script');
-    dataScript.src = 'data.js?t=' + timestamp;
+    dataScript.src = 'data.js?v=' + timestamp + '&r=' + randomNum;
+    dataScript.type = 'text/javascript';
     document.head.appendChild(dataScript);
     
     dataScript.onload = function() {
         const appScript = document.createElement('script');
-        appScript.src = 'app.js?t=' + timestamp;
+        appScript.src = 'app.js?v=' + timestamp + '&r=' + randomNum;
+        appScript.type = 'text/javascript';
         document.head.appendChild(appScript);
     };
 </script>
