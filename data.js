@@ -4,8 +4,8 @@
 const websiteData = {
   "business": {
     "name": "Sawi's Delight Cakes",
-    "phone": "+254797486557",
-    "location": "Futro Area, Alego Usonga, Siaya County, Kenya"
+    "phone": "+254797486557 , +254724982339",
+    "location": "Futro Area, Alego Usonga, Siaya County, Kenya: https://maps.app.goo.gl/JrQnp91QmVLp6Yr1A"
   },
   "heroSlides": [
     {
@@ -84,7 +84,7 @@ const websiteData = {
           "value": "Included"
         }
       ],
-      "startingPrice": "Starting from KSh 2,000"
+      "startingPrice": "Starting from KSh 2000"
     },
     {
       "id": "graduation",
