@@ -914,7 +914,19 @@
         <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">© 2025 Sawi's Delight Cakes. All rights reserved.</p>
     </footer>
     
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script>
+    // Automatic cache-busting - no manual updates needed!
+    const timestamp = new Date().getTime();
+    
+    const dataScript = document.createElement('script');
+    dataScript.src = 'data.js?t=' + timestamp;
+    document.head.appendChild(dataScript);
+    
+    dataScript.onload = function() {
+        const appScript = document.createElement('script');
+        appScript.src = 'app.js?t=' + timestamp;
+        document.head.appendChild(appScript);
+    };
+</script>
 </body>
 </html>
